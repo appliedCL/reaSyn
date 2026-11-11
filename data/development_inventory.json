@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "source_study": {
+    "dataset_id": "de_bruyn_2024",
+    "publication": "https://doi.org/10.1021/acs.jcim.4c01172",
+    "accession": "zenodo:13892825",
+    "record_url": "https://zenodo.org/records/13892825",
+    "licence": "cc-by-4.0"
+  },
+  "archive": {
+    "path": "data/raw/de_bruyn_2024/13892825/protein+ion_trajectories.zip",
+    "url": "https://zenodo.org/api/records/13892825/files/protein+ion_trajectories.zip/content",
+    "published_checksum": "md5:fa72beb77a32ae3325621d83f71c6422",
+    "size_bytes": 1173814604,
+    "md5": "fa72beb77a32ae3325621d83f71c6422",
+    "sha256": "cd39056ce4f045713ab4bbe49908960549979bd0e54514a9e3a6cffa51aedc8e"
+  },
+  "reported_study_conditions": {
+    "temperature_k": 300,
+    "nominal_nacl_mM": 150,
+    "sampling_method": "REST2",
+    "evidence": [
+      "https://zenodo.org/records/13892825",
+      "https://doi.org/10.1021/acs.jcim.4c01172"
+    ],
+    "verified_from_simulation_parameters": false
+  },
+  "trajectory_count": 2,
+  "total_stored_frames": 120002,
+  "trajectories": [
+    {
+      "trajectory_id": "zenodo:13892825::DES-Amber simulations/AS/proteins+ions.xtc",
+      "condition_label": "AS",
+      "force_field_folder_label": "DES-Amber",
+      "files": {
+        "pdb": "DES-Amber simulations/AS/proteins+ions.pdb",
+        "gro": "DES-Amber simulations/AS/proteins+ions.gro",
+        "tpr": "DES-Amber simulations/AS/proteins+ions.tpr",
+        "xtc": "DES-Amber simulations/AS/proteins+ions.xtc"
+      },
+      "observed": {
+        "atom_count": 2384,
+        "protein_residue_count": 140,
+        "sequence": "MDVFMKGLSKAKEGVVAAAEKTKQGVAEAAGKTKEGVLYVGSKTKEGVVHGVATVAEKTKEQVTNVGGAVVTGVTAVAQKTVEGAGSIAAATGFVKKDQLGKNEEGAPQEGILEDMPVDPDNEAYEMPSEEGYQDYEPEA",
+        "sequence_normalisation": {
+          "HIE": "H",
+          "SEP": "S"
+        },
+        "s129_phosphorylated": false,
+        "acetyl_cap_present": true
+      },
+      "trajectory": {
+        "frame_count": 60001,
+        "first_time_ps": 0.0,
+        "last_time_ps": 600000.0,
+        "minimum_frame_interval_ps": 10.0,
+        "maximum_frame_interval_ps": 10.0
+      },
+      "unresolved_metadata": {
+        "original_sample_id": null,
+        "original_run_id": null,
+        "original_replica_id": null,
+        "pH": null,
+        "run_seed": null,
+        "batch_id": null,
+        "original_population_weights": null
+      }
+    },
+    {
+      "trajectory_id": "zenodo:13892825::DES-Amber simulations/pAS/proteins+ions.xtc",
+      "condition_label": "pAS",
+      "force_field_folder_label": "DES-Amber",
+      "files": {
+        "pdb": "DES-Amber simulations/pAS/proteins+ions.pdb",
+        "gro": "DES-Amber simulations/pAS/proteins+ions.gro",
+        "tpr": "DES-Amber simulations/pAS/proteins+ions.tpr",
+        "xtc": "DES-Amber simulations/pAS/proteins+ions.xtc"
+      },
+      "observed": {
+        "atom_count": 2355,
+        "protein_residue_count": 140,
+        "sequence": "MDVFMKGLSKAKEGVVAAAEKTKQGVAEAAGKTKEGVLYVGSKTKEGVVHGVATVAEKTKEQVTNVGGAVVTGVTAVAQKTVEGAGSIAAATGFVKKDQLGKNEEGAPQEGILEDMPVDPDNEAYEMPSEEGYQDYEPEA",
+        "sequence_normalisation": {
+          "HIE": "H",
+          "SEP": "S"
+        },
+        "s129_phosphorylated": true,
+        "acetyl_cap_present": true
+      },
+      "trajectory": {
+        "frame_count": 60001,
+        "first_time_ps": 0.0,
+        "last_time_ps": 600000.0,
+        "minimum_frame_interval_ps": 10.0,
+        "maximum_frame_interval_ps": 10.0
+      },
+      "unresolved_metadata": {
+        "original_sample_id": null,
+        "original_run_id": null,
+        "original_replica_id": null,
+        "pH": null,
+        "run_seed": null,
+        "batch_id": null,
+        "original_population_weights": null
+      }
+    }
+  ],
+  "limitations": [
+    "Stored frames are not established as unique conformations or independent samples.",
+    "Coordinate geometry, PDB/GRO atom order and TPR parameters remain unchecked.",
+    "A causal model and suitable confounders have not been established."
+  ],
+  "source_manifest_sha256": "6c9916629b07796e61d1c0512ad3b6c78c1dd7ddcd0774026d997bbabf974b02"
+}

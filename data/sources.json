@@ -1,0 +1,505 @@
+{
+  "schema_version": 1,
+  "metadata_checked_at": "2026-11-11T16:59:09.918Z",
+  "planned_download_bytes": 51262192086,
+  "publication_plan": "Publish methods, source references, identifiers, resampling weights and results; retain original coordinates locally.",
+  "datasets": [
+    {
+      "id": "de_bruyn_2024",
+      "role": "development",
+      "title": "Molecular Dynamics Trajectories Exploring the Impact of Phosphorylation on the Physiological Form of Human alpha-Synuclein in Aqueous Solution",
+      "publication": "https://doi.org/10.1021/acs.jcim.4c01172",
+      "record_ids": [
+        "13892825"
+      ],
+      "notes": [
+        "The protein-and-ion archive is selected for the initial inspection; it contains configurations and non-parameterised topologies according to the deposit.",
+        "The additional-simulation and solvent-containing archives are not selected.",
+        "Run independence, coordinate integrity and suitability for causal adjustment have not yet been established."
+      ],
+      "records": [
+        {
+          "accession": "zenodo:13892825",
+          "doi": "10.5281/zenodo.13892825",
+          "record_url": "https://zenodo.org/records/13892825",
+          "metadata_url": "https://zenodo.org/api/records/13892825",
+          "metadata_path": "data/raw/de_bruyn_2024/13892825/record.json",
+          "licence": "cc-by-4.0",
+          "files": [
+            {
+              "name": "additional_simulations.zip",
+              "size_bytes": 11436530165,
+              "checksum": "md5:cd529ef7655a8364b1c16cef1ea75234",
+              "url": "https://zenodo.org/api/records/13892825/files/additional_simulations.zip/content",
+              "path": "data/raw/de_bruyn_2024/13892825/additional_simulations.zip",
+              "selected": false,
+              "exclusion_reason": "Not needed for the initial protein-and-ion inspection; contains solvent-inclusive or additional simulations."
+            },
+            {
+              "name": "protein+ion_trajectories.zip",
+              "size_bytes": 1173814604,
+              "checksum": "md5:fa72beb77a32ae3325621d83f71c6422",
+              "url": "https://zenodo.org/api/records/13892825/files/protein+ion_trajectories.zip/content",
+              "path": "data/raw/de_bruyn_2024/13892825/protein+ion_trajectories.zip",
+              "selected": true
+            },
+            {
+              "name": "README.md",
+              "size_bytes": 2050,
+              "checksum": "md5:d26ab3796c36492edb950c4a7c7d27f1",
+              "url": "https://zenodo.org/api/records/13892825/files/README.md/content",
+              "path": "data/raw/de_bruyn_2024/13892825/README.md",
+              "selected": true
+            },
+            {
+              "name": "all_atom_trajectories.zip",
+              "size_bytes": 84203450095,
+              "checksum": "md5:5b2ede283073f6df28b0e96824e32bde",
+              "url": "https://zenodo.org/api/records/13892825/files/all_atom_trajectories.zip/content",
+              "path": "data/raw/de_bruyn_2024/13892825/all_atom_trajectories.zip",
+              "selected": false,
+              "exclusion_reason": "Not needed for the initial protein-and-ion inspection; contains solvent-inclusive or additional simulations."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ollila_malm",
+      "role": "evaluation_candidate",
+      "title": "MD simulations of alphasynuclein with ions",
+      "publication": "https://doi.org/10.1038/s42004-026-02155-8",
+      "record_ids": [
+        "17607490",
+        "17582035"
+      ],
+      "notes": [
+        "These two deposits form one study collection, not two independent datasets.",
+        "The original TPR and XTC files are preserved; atom-count and atom-order compatibility have not yet been checked.",
+        "Sequence, modifications, solution conditions and shared upstream evidence require comparison before independent evaluation."
+      ],
+      "records": [
+        {
+          "accession": "zenodo:17607490",
+          "doi": "10.5281/zenodo.17607490",
+          "record_url": "https://zenodo.org/records/17607490",
+          "metadata_url": "https://zenodo.org/api/records/17607490",
+          "metadata_path": "data/raw/ollila_malm/17607490/record.json",
+          "licence": "cc-by-4.0",
+          "files": [
+            {
+              "name": "aSyn_replica_02_DESAMBER_2000ns.tpr",
+              "size_bytes": 10102480,
+              "checksum": "md5:ca7054432c64a1bf8401205ed546227f",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_02_DESAMBER_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_02_DESAMBER_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_02_CHARMM36M_2000ns.tpr",
+              "size_bytes": 10269388,
+              "checksum": "md5:05614eb3de716528eb6d26bffb46802c",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_02_CHARMM36M_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_02_CHARMM36M_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_02_CHARMM36M_2000ns.xtc",
+              "size_bytes": 1972500616,
+              "checksum": "md5:294155e2e19873af1954d4a27d2785bf",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_02_CHARMM36M_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_02_CHARMM36M_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_02_DESAMBER_2000ns.xtc",
+              "size_bytes": 1969577500,
+              "checksum": "md5:c22aa0b7974da14d0ea55d5a4d7055ef",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_02_DESAMBER_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_02_DESAMBER_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_02_AMBER03WS_2000ns.xtc",
+              "size_bytes": 1968686904,
+              "checksum": "md5:a3e70695e9c2314a204d3aae38f56a32",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_02_AMBER03WS_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_02_AMBER03WS_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_01_AMBER99SB-DISP_2000ns.tpr",
+              "size_bytes": 9820936,
+              "checksum": "md5:520661c298c2c351a7c8765b8e6d2500",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_01_AMBER99SB-DISP_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_01_AMBER99SB-DISP_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_01_DESAMBER_2000ns.tpr",
+              "size_bytes": 9930568,
+              "checksum": "md5:dd5e3b50050984b01973d73d8b8e3df0",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_01_DESAMBER_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_01_DESAMBER_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_01_AMBER99SBWS_2000ns.xtc",
+              "size_bytes": 1958737144,
+              "checksum": "md5:1fcb5d96b23864d1f014e03625277e69",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_01_AMBER99SBWS_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_01_AMBER99SBWS_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_02_AMBER99SBWS_2000ns.tpr",
+              "size_bytes": 10042724,
+              "checksum": "md5:039a2b53779f643181c8cf1e8bed3ad6",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_02_AMBER99SBWS_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_02_AMBER99SBWS_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_01_DESAMBER_2000ns.xtc",
+              "size_bytes": 1960752984,
+              "checksum": "md5:fa54cb5f79bd7655918c69619d42acd3",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_01_DESAMBER_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_01_DESAMBER_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_02_AMBER99SB-DISP_2000ns.tpr",
+              "size_bytes": 10021032,
+              "checksum": "md5:9ea2167c35177ff0eaa3dc7f0a324dca",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_02_AMBER99SB-DISP_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_02_AMBER99SB-DISP_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_02_AMBER99SBWS_2000ns.xtc",
+              "size_bytes": 1967603052,
+              "checksum": "md5:99f4e14f16fd2f240ab3e017d2053724",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_02_AMBER99SBWS_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_02_AMBER99SBWS_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_02_AMBER99SB-DISP_2000ns.xtc",
+              "size_bytes": 1968274292,
+              "checksum": "md5:88f691a3ff757a7ea6625342328939c4",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_02_AMBER99SB-DISP_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_02_AMBER99SB-DISP_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_03_AMBER03WS_2000ns.tpr",
+              "size_bytes": 9074008,
+              "checksum": "md5:fc9c4e940be1b91a16efbc6baff8e2df",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_03_AMBER03WS_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_03_AMBER03WS_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_03_AMBER99SB-DISP_2000ns.tpr",
+              "size_bytes": 8878480,
+              "checksum": "md5:72183b77cacb0725e8dddc04922665e6",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_03_AMBER99SB-DISP_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_03_AMBER99SB-DISP_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_03_AMBER99SBWS_2000ns.tpr",
+              "size_bytes": 9071712,
+              "checksum": "md5:990f051ed2b5e783405b1c61e13c5f15",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_03_AMBER99SBWS_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_03_AMBER99SBWS_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_03_DESAMBER_2000ns.tpr",
+              "size_bytes": 9131424,
+              "checksum": "md5:012767d2449be56b184eeb1d2f698c25",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_03_DESAMBER_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_03_DESAMBER_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_03_AMBER03WS_2000ns.xtc",
+              "size_bytes": 1928901800,
+              "checksum": "md5:b13d49c315c3d0ba956a8113ef9368db",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_03_AMBER03WS_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_03_AMBER03WS_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_03_CHARMM36M_2000ns.tpr",
+              "size_bytes": 9299100,
+              "checksum": "md5:107ae6db7bc449bc1194ec2a3f30cb71",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_03_CHARMM36M_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_03_CHARMM36M_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_03_AMBER99SB-DISP_2000ns.xtc",
+              "size_bytes": 1929446044,
+              "checksum": "md5:7d5fa19fcfdd50bd914f82dc1a3a7e6b",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_03_AMBER99SB-DISP_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_03_AMBER99SB-DISP_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_03_DESAMBER_2000ns.xtc",
+              "size_bytes": 1930197544,
+              "checksum": "md5:967a0a772f2b27faac916a581ed31017",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_03_DESAMBER_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_03_DESAMBER_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_03_AMBER99SBWS_2000ns.xtc",
+              "size_bytes": 1928337832,
+              "checksum": "md5:45e87e9ac41f3aabb660e9254c921397",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_03_AMBER99SBWS_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_03_AMBER99SBWS_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_03_CHARMM36M_2000ns.xtc",
+              "size_bytes": 1931072512,
+              "checksum": "md5:c799b0bf71e808212c31d690034455fa",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_03_CHARMM36M_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_03_CHARMM36M_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_01_AMBER03WS_2000ns.tpr",
+              "size_bytes": 9872612,
+              "checksum": "md5:2e3c10c8c57455a6e904ca82caec25f5",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_01_AMBER03WS_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_01_AMBER03WS_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_01_AMBER99SB-DISP_2000ns.xtc",
+              "size_bytes": 1962681356,
+              "checksum": "md5:88e5acc4ffdcbc640ab44061219ffe6c",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_01_AMBER99SB-DISP_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_01_AMBER99SB-DISP_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_01_CHARMM36M_2000ns.tpr",
+              "size_bytes": 10097580,
+              "checksum": "md5:c3852cb4e9588ed8b858149e34399b02",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_01_CHARMM36M_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_01_CHARMM36M_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_01_CHARMM36M_2000ns.xtc",
+              "size_bytes": 1962664500,
+              "checksum": "md5:94a13fa6f756887c5015c8b431ada165",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_01_CHARMM36M_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_01_CHARMM36M_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_01_AMBER03WS_2000ns.xtc",
+              "size_bytes": 1959300056,
+              "checksum": "md5:64b89847fc04b0cebbd964894ca999f2",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_01_AMBER03WS_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_01_AMBER03WS_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_01_AMBER99SBWS_2000ns.tpr",
+              "size_bytes": 9870812,
+              "checksum": "md5:307a7e4f4909ad89fd58177fe2f43524",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_01_AMBER99SBWS_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_01_AMBER99SBWS_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_02_AMBER03WS_2000ns.tpr",
+              "size_bytes": 10044524,
+              "checksum": "md5:35ded96ed749c2353501542b29c49e97",
+              "url": "https://zenodo.org/api/records/17607490/files/aSyn_replica_02_AMBER03WS_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17607490/aSyn_replica_02_AMBER03WS_2000ns.tpr",
+              "selected": true
+            }
+          ]
+        },
+        {
+          "accession": "zenodo:17582035",
+          "doi": "10.5281/zenodo.17582035",
+          "record_url": "https://zenodo.org/records/17582035",
+          "metadata_url": "https://zenodo.org/api/records/17582035",
+          "metadata_path": "data/raw/ollila_malm/17582035/record.json",
+          "licence": "cc-by-4.0",
+          "files": [
+            {
+              "name": "aSyn_replica_05_AMBER99SB-DISP_2000ns.tpr",
+              "size_bytes": 14190072,
+              "checksum": "md5:4064b6f82eb19c1d39f16826b22f7837",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_05_AMBER99SB-DISP_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_05_AMBER99SB-DISP_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_04_CHARMM36M_2000ns.tpr",
+              "size_bytes": 10296148,
+              "checksum": "md5:cff54dadd8c452b6f073539c79d3c1f9",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_04_CHARMM36M_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_04_CHARMM36M_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_05_DESAMBER_2000ns.xtc",
+              "size_bytes": 2128374128,
+              "checksum": "md5:aa21e10bcdf3093248c2b7cc681cfb86",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_05_DESAMBER_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_05_DESAMBER_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_04_AMBER99SB-DISP_2000ns.xtc",
+              "size_bytes": 1973798264,
+              "checksum": "md5:969b5ceb9d6fec4ca5da9ff7524f74fe",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_04_AMBER99SB-DISP_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_04_AMBER99SB-DISP_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_05_AMBER99SBWS_2000ns.xtc",
+              "size_bytes": 2130809928,
+              "checksum": "md5:ed1312ae0fa37d6a96a2815093311c0c",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_05_AMBER99SBWS_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_05_AMBER99SBWS_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_05_AMBER03WS_2000ns.xtc",
+              "size_bytes": 2131355152,
+              "checksum": "md5:b19e3ef9ca3ef0400fdb03f60c67000e",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_05_AMBER03WS_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_05_AMBER03WS_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_05_AMBER99SB-DISP_2000ns.xtc",
+              "size_bytes": 2131409108,
+              "checksum": "md5:a10e472eb324390f0a84deb852d64eeb",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_05_AMBER99SB-DISP_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_05_AMBER99SB-DISP_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_04_DESAMBER_2000ns.tpr",
+              "size_bytes": 10128784,
+              "checksum": "md5:cd4d108170a49636d78964de8e2a7bc5",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_04_DESAMBER_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_04_DESAMBER_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_04_AMBER99SB-DISP_2000ns.tpr",
+              "size_bytes": 10065536,
+              "checksum": "md5:efc419534bd7fdf206df688f73fef589",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_04_AMBER99SB-DISP_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_04_AMBER99SB-DISP_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_05_AMBER99SBWS_2000ns.tpr",
+              "size_bytes": 14266928,
+              "checksum": "md5:aaf4ba6f4a610702986c1ca08461e35d",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_05_AMBER99SBWS_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_05_AMBER99SBWS_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_05_CHARMM36M_2000ns.tpr",
+              "size_bytes": 14494004,
+              "checksum": "md5:4c1f87e446cfa0b98e31c4f110a6e28f",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_05_CHARMM36M_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_05_CHARMM36M_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_05_DESAMBER_2000ns.tpr",
+              "size_bytes": 14326640,
+              "checksum": "md5:646e05e8144a00910179a384e5ebc9cb",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_05_DESAMBER_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_05_DESAMBER_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_04_AMBER03WS_2000ns.tpr",
+              "size_bytes": 10071368,
+              "checksum": "md5:5f8a453cbbede8ee2b6b75532239c82c",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_04_AMBER03WS_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_04_AMBER03WS_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_04_AMBER99SBWS_2000ns.tpr",
+              "size_bytes": 10069072,
+              "checksum": "md5:836d22fc00140fdce5867bea4117049c",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_04_AMBER99SBWS_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_04_AMBER99SBWS_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_05_AMBER03WS_2000ns.tpr",
+              "size_bytes": 14269224,
+              "checksum": "md5:5e717ccc0cce15a48d432ce41840134f",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_05_AMBER03WS_2000ns.tpr/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_05_AMBER03WS_2000ns.tpr",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_04_AMBER03WS_2000ns.xtc",
+              "size_bytes": 1971768528,
+              "checksum": "md5:5d207dda41eb3ed2092b5bb24a0bf18e",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_04_AMBER03WS_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_04_AMBER03WS_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_04_DESAMBER_2000ns.xtc",
+              "size_bytes": 1973028684,
+              "checksum": "md5:d6dd3dd9ab89bd26efae06ab9828fff1",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_04_DESAMBER_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_04_DESAMBER_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_04_CHARMM36M_2000ns.xtc",
+              "size_bytes": 1974496264,
+              "checksum": "md5:4084e23a485ab8edbf66f0d0359955c0",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_04_CHARMM36M_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_04_CHARMM36M_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_04_AMBER99SBWS_2000ns.xtc",
+              "size_bytes": 1973477224,
+              "checksum": "md5:a37610ad7af0d63b9e2df343f011e2bc",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_04_AMBER99SBWS_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_04_AMBER99SBWS_2000ns.xtc",
+              "selected": true
+            },
+            {
+              "name": "aSyn_replica_05_CHARMM36M_2000ns.xtc",
+              "size_bytes": 2133418860,
+              "checksum": "md5:46934f92bce9ec41178a31399e13b1e9",
+              "url": "https://zenodo.org/api/records/17582035/files/aSyn_replica_05_CHARMM36M_2000ns.xtc/content",
+              "path": "data/raw/ollila_malm/17582035/aSyn_replica_05_CHARMM36M_2000ns.xtc",
+              "selected": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

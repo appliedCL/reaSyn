@@ -1,0 +1,4 @@
+/data/raw/
+/data/download_receipt.json
+__pycache__/
+.DS_Store

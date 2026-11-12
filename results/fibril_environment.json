@@ -1,0 +1,14 @@
+{
+  "code_version": "312df1529a766bb9bebac2b2699f12d89e0da9b324812f46c8566182fe4e3d63",
+  "data_version": null,
+  "environment": {
+    "python": "3.14.10",
+    "requirements_sha256": "873fea3415626a48ee410207097d7ea17d1b0b3ab2de3743684c73b95998f524"
+  },
+  "parameters": {
+    "seed": 42
+  },
+  "run_id": "fd2934b72db10f7a",
+  "seed_probe": 2053695854357871005,
+  "stage": "fibril_environment"
+}

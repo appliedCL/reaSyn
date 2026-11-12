@@ -1,4 +1,5 @@
 /data/raw/
-/data/download_receipt.json
+.ipynb_checkpoints/
 __pycache__/
 .DS_Store
+plan.md

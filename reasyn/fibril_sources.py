@@ -43,3 +43,8 @@ def write_csv(path, rows, fields=None):
     temporary.replace(path)
 
 
+def read_csv(path):
+    with Path(path).open(newline="") as source:
+        return list(csv.DictReader(source))
+
+

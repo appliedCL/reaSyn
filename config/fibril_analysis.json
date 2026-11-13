@@ -18,5 +18,6 @@
   "max_copies": 5,
   "resampling_runs": 20,
   "bootstrap_runs": 500,
-  "primary_metric": "average_precision"
+  "primary_metric": "average_precision",
+  "causal_exposure": null
 }

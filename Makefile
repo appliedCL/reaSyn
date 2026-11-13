@@ -1,4 +1,4 @@
-.PHONY: check-fibril-environment
+.PHONY: check-fibril-environment download-fibril-structures
 
 check-fibril-environment:
 	docker build --tag reasyn-fibril-environment .
@@ -8,3 +8,8 @@ check-fibril-environment:
 	docker run --rm --network none --mount 'type=bind,src=$(CURDIR)/results,dst=/workspace/results' reasyn-fibril-environment
 	cmp results/fibril_environment.first.json results/fibril_environment.json
 	rm results/fibril_environment.first.json
+
+download-fibril-structures:
+	docker build --tag reasyn-fibril-environment .
+	mkdir -p data
+	docker run --rm --mount 'type=bind,src=$(CURDIR)/data,dst=/workspace/data' --mount 'type=bind,src=$(CURDIR)/notebooks,dst=/workspace/notebooks' reasyn-fibril-environment jupyter execute notebooks/download_fibril_structures.ipynb --timeout=1800 --inplace

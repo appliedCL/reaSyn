@@ -3,3 +3,4 @@
 !requirements.txt
 !notebooks/
 !notebooks/fibril_reproducibility.ipynb
+!notebooks/download_fibril_structures.ipynb

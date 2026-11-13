@@ -15,5 +15,6 @@
   "near_duplicate_score": 0.95,
   "minimum_common_residues": 30,
   "evaluation_from": "2024-01-01",
-  "max_copies": 5
+  "max_copies": 5,
+  "resampling_runs": 20
 }

@@ -1,1 +1,1 @@
-reaSyn studies causal resampling of alpha-synuclein fibril structures from the [Amyloid Atlas](https://people.mbi.ucla.edu/sawaya/amyloidatlas/) and PDB.
+reaSyn: causal resampling of alpha-synuclein fibril structures from the [Amyloid Atlas](https://people.mbi.ucla.edu/sawaya/amyloidatlas/) and PDB.

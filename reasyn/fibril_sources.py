@@ -48,3 +48,11 @@ def read_csv(path):
         return list(csv.DictReader(source))
 
 
+def project_path(root, relative):
+    root = Path(root).resolve()
+    path = (root / relative).resolve()
+    if not path.is_relative_to(root):
+        raise ValueError(f"source path escapes the project: {relative}")
+    return path
+
+

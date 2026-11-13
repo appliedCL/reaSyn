@@ -1,9 +1,11 @@
 asttokens==3.0.2
 attrs==26.1.0
+beautifulsoup4==4.14.3
 comm==0.2.3
 debugpy==1.8.22
 executing==2.3.0
 fastjsonschema==2.22.3
+gemmi==0.7.5
 ipykernel==7.3.0
 ipython==9.18.1
 ipython_pygments_lexers==1.1.1
@@ -29,6 +31,7 @@ python-dateutil==4.0.0
 pyzmq==27.3.0
 referencing==0.37.0
 rpds-py==2026.9.1
+soupsieve==4.1
 stack-data==0.6.3
 tornado==6.6.1
 traitlets==5.16.1

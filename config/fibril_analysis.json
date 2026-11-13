@@ -11,5 +11,6 @@
     0.5,
     0.55
   ],
-  "primary_cutoff": 0.5
+  "primary_cutoff": 0.5,
+  "near_duplicate_score": 0.95
 }

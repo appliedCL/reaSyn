@@ -49,3 +49,14 @@ def read_backbones(path, minimum_residues=30):
     return result
 
 
+def aligned_distances(left, right):
+    if left.shape != right.shape or left.ndim != 2 or left.shape[1] != 3 or len(left) < 3:
+        raise ValueError("alignment needs matching arrays of at least three xyz positions")
+    left = left - left.mean(axis=0)
+    right = right - right.mean(axis=0)
+    u, _, vt = np.linalg.svd(left.T @ right)
+    correction = np.eye(3)
+    correction[-1, -1] = np.linalg.det(u @ vt)
+    return np.linalg.norm(left @ (u @ correction @ vt) - right, axis=1)
+
+

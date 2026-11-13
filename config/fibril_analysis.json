@@ -1,16 +1,7 @@
 {
   "seed": 20261115,
-  "reference_ids": [
-    "6XYO",
-    "6XYP",
-    "6XYQ",
-    "8A9L"
-  ],
-  "label_cutoffs": [
-    0.45,
-    0.5,
-    0.55
-  ],
+  "reference_ids": ["6XYO", "6XYP", "6XYQ", "8A9L"],
+  "label_cutoffs": [0.45, 0.5, 0.55],
   "primary_cutoff": 0.5,
   "near_duplicate_score": 0.95,
   "minimum_common_residues": 30,
@@ -20,5 +11,6 @@
   "bootstrap_runs": 500,
   "primary_metric": "average_precision",
   "causal_exposure": null,
-  "causal_confounders": []
+  "causal_confounders": [],
+  "causal_target": null
 }

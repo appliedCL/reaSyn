@@ -120,3 +120,30 @@ def classify_origin(text):
     return "unknown", "no unambiguous origin in atlas annotation"
 
 
+def enrich_provenance(rows, manifest):
+    atlas = {row["pdb_id"]: row for row in manifest["atlas_entries"]}
+    result = []
+    for original in rows:
+        row = dict(original)
+        entry = atlas[row["pdb_id"]]
+        origin, reason = classify_origin(entry["origins_text"])
+        row.update({
+            "study_id": row["study_doi"].lower().strip(),
+            "source_unit_id": row["study_doi"].lower().strip(),
+            "sample_id": row["source_preparation_id"],
+            "sample_independence": "unresolved; study is the conservative sampling and uncertainty unit",
+            "atlas_origin": origin,
+            "atlas_origin_raw": entry["origins_text"],
+            "atlas_origin_source": "data/raw/alpha_synuclein_fibrils/amyloid_atlas.html::" + row["pdb_id"],
+            "atlas_origin_reason": reason,
+            "annotation_status": "atlas-derived origin; paper annotations retain their original review status",
+            "coordinate_url": f"https://files.rcsb.org/download/{row['pdb_id']}.cif",
+            "coordinate_sha256": manifest["files"][row["coordinate_path"]]["sha256"],
+            "coordinate_licence": "CC0-1.0",
+            "coordinate_licence_url": "https://www.wwpdb.org/about/usage-policies",
+            "release_year": int(row["release_date"][:4]),
+        })
+        if not re.fullmatch(r"[1-9][A-Z0-9]{3}", row["pdb_id"]):
+            raise ValueError("invalid PDB identifier")
+        result.append(row)
+    return result

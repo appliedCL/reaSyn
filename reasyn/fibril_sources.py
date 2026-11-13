@@ -30,3 +30,16 @@ def write_json(path, value):
     temporary.replace(path)
 
 
+def write_csv(path, rows, fields=None):
+    rows = list(rows)
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fields = fields or (list(rows[0]) if rows else [])
+    temporary = path.with_suffix(path.suffix + ".part")
+    with temporary.open("w", newline="") as destination:
+        writer = csv.DictWriter(destination, fieldnames=fields, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+    temporary.replace(path)
+
+

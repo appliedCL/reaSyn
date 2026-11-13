@@ -72,3 +72,10 @@ def compare_backbones(left, right, minimum_common=30):
             "coverage": len(common) / length}
 
 
+def compare_structures(left, right, minimum_common=30):
+    comparisons = [(compare_backbones(a, b, minimum_common), a["chain"], b["chain"])
+                   for a in left for b in right]
+    result, a, b = max(comparisons, key=lambda item: item[0]["score"])
+    return dict(result, left_chain=a, right_chain=b)
+
+

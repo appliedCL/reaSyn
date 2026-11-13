@@ -60,3 +60,15 @@ def aligned_distances(left, right):
     return np.linalg.norm(left @ (u @ correction @ vt) - right, axis=1)
 
 
+def compare_backbones(left, right, minimum_common=30):
+    common, li, ri = np.intersect1d(left["residues"], right["residues"], return_indices=True)
+    if len(common) < minimum_common:
+        return {"score": 0.0, "rmsd": None, "common": len(common), "coverage": 0.0}
+    distances = aligned_distances(left["xyz"][li], right["xyz"][ri])
+    length = max(len(left["xyz"]), len(right["xyz"]))
+    scale = max(0.5, 1.24 * np.cbrt(max(length - 15, 1)) - 1.8)
+    return {"score": float(np.sum(1 / (1 + (distances / scale) ** 2)) / length),
+            "rmsd": float(np.sqrt(np.mean(distances ** 2))), "common": len(common),
+            "coverage": len(common) / length}
+
+

@@ -17,5 +17,6 @@
   "evaluation_from": "2024-01-01",
   "max_copies": 5,
   "resampling_runs": 20,
-  "bootstrap_runs": 500
+  "bootstrap_runs": 500,
+  "primary_metric": "average_precision"
 }

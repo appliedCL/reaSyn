@@ -15,3 +15,7 @@ def sha256_file(path):
     return digest.hexdigest()
 
 
+def canonical_bytes(value):
+    return (json.dumps(value, sort_keys=True, indent=2, allow_nan=False) + "\n").encode()
+
+

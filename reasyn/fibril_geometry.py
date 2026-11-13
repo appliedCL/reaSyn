@@ -87,3 +87,22 @@ def unique_backbones(chains):
     return representatives
 
 
+def geometric_features(chains):
+    descriptors = []
+    for chain in chains:
+        xyz = chain["xyz"]
+        centred = xyz - xyz.mean(axis=0)
+        eigenvalues = np.linalg.eigvalsh(centred.T @ centred / len(xyz))
+        distances = squareform(pdist(xyz))
+        separation = np.abs(chain["residues"][:, None] - chain["residues"][None, :])
+        nonlocal_pairs = separation > 4
+        descriptors.append({
+            "ordered_residues": len(xyz),
+            "radius_of_gyration": float(np.sqrt(eigenvalues.sum())),
+            "span": float(distances.max()),
+            "end_to_end": float(np.linalg.norm(xyz[0] - xyz[-1])),
+            "contact_density": float(np.mean(distances[nonlocal_pairs] < 8)),
+            "axis_ratio": float(eigenvalues[-1] / max(eigenvalues.sum(), 1e-12)),
+            "planarity": float(eigenvalues[0] / max(eigenvalues.sum(), 1e-12)),
+        })
+    return {key: float(np.mean([row[key] for row in descriptors])) for key in descriptors[0]}

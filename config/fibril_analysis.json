@@ -19,5 +19,6 @@
   "resampling_runs": 20,
   "bootstrap_runs": 500,
   "primary_metric": "average_precision",
-  "causal_exposure": null
+  "causal_exposure": null,
+  "causal_confounders": []
 }

@@ -19,3 +19,14 @@ def canonical_bytes(value):
     return (json.dumps(value, sort_keys=True, indent=2, allow_nan=False) + "\n").encode()
 
 
+def write_json(path, value):
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    content = canonical_bytes(value)
+    if path.exists() and path.read_bytes() == content:
+        return
+    temporary = path.with_suffix(path.suffix + ".part")
+    temporary.write_bytes(content)
+    temporary.replace(path)
+
+

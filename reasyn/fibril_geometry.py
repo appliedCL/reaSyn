@@ -79,3 +79,11 @@ def compare_structures(left, right, minimum_common=30):
     return dict(result, left_chain=a, right_chain=b)
 
 
+def unique_backbones(chains):
+    representatives = []
+    for chain in chains:
+        if not any(compare_backbones(chain, existing)["score"] > 0.995 for existing in representatives):
+            representatives.append(chain)
+    return representatives
+
+

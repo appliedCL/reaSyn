@@ -109,3 +109,14 @@ def validate_sources(root):
     return manifest, rows, {"path": path.relative_to(root).as_posix(), "record": record}
 
 
+def classify_origin(text):
+    text = text.lower()
+    if "mouse" in text or "m83" in text:
+        return "model_organism", "explicit mouse or m83 material in atlas origins"
+    if "recombinant" in text or "semisynthetic" in text or "synthetic" in text:
+        return "in_vitro", "explicit recombinant, semisynthetic or synthetic material; seeds do not change origin"
+    if "extract" in text and any(word in text for word in ("patient", "brain", "cortex", "atrophy")):
+        return "human_tissue", "explicit extraction from human clinical material in atlas origins"
+    return "unknown", "no unambiguous origin in atlas annotation"
+
+

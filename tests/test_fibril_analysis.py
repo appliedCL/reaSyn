@@ -53,3 +53,15 @@ def test_constant_weights_when_exposure_is_balanced():
     assert np.all(weights == 1)
 
 
+@pytest.mark.parametrize("seed", range(20))
+def test_capped_sampling_determinism_and_probabilities(seed):
+    units = np.array(["a", "a", "b"])
+    draws, counts = hierarchical_draw(units, {"a": 1, "b": 1}, 6, seed, max_copies=2)
+    again, again_counts = hierarchical_draw(units, {"a": 1, "b": 1}, 6, seed, max_copies=2)
+    assert draws == again
+    assert np.array_equal(counts, again_counts)
+    assert counts.sum() == 6 and counts.max() == 2
+    assert all(0 < d["conditional_probability"] <= 1 for d in draws)
+    assert all(d["initial_probability"] == (0.5 if d["index"] == 2 else 0.25) for d in draws)
+
+

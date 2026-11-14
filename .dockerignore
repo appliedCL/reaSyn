@@ -7,3 +7,4 @@
 !requirements-analysis.txt
 !Dockerfile.analysis
 !reasyn/
+!reasyn/*.py

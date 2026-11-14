@@ -71,3 +71,20 @@ def bootstrap_intervals(labels, probabilities, groups, seed, repetitions):
                           for metric in ("average_precision", "roc_auc", "brier")}}
 
 
+def run_analysis(root, config_path):
+    root = Path(root).resolve()
+    lock = root / "data/.fibril-analysis.lock"
+    if not lock.parent.is_dir():
+        raise ValueError("download and curate the source dataset before running analysis")
+    try:
+        descriptor = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
+    except FileExistsError as error:
+        raise RuntimeError("analysis already running; remove a stale data/.fibril-analysis.lock only after checking its process") from error
+    try:
+        with os.fdopen(descriptor, "w") as destination:
+            destination.write(str(os.getpid()))
+        return _run_analysis(root, config_path)
+    finally:
+        lock.unlink(missing_ok=True)
+
+

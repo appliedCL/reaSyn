@@ -31,3 +31,15 @@ def test_missing_residues_cannot_score_as_complete():
     assert compare_backbones(left, right)["score"] == pytest.approx(0.5)
 
 
+def test_causal_adjustment_recovers_planted_confounding():
+    c = np.repeat([0, 1], 1000)
+    a = np.r_[np.ones(100), np.zeros(900), np.ones(900), np.zeros(100)].astype(int)
+    outcome = 2 * a + 4 * c
+    weights, propensity = stratified_causal_weights(a, c)
+    naive = outcome[a == 1].mean() - outcome[a == 0].mean()
+    corrected = np.average(outcome[a == 1], weights=weights[a == 1]) - np.average(outcome[a == 0], weights=weights[a == 0])
+    assert naive > 5
+    assert corrected == pytest.approx(2)
+    assert set(np.round(propensity, 1)) == {0.1, 0.9}
+
+

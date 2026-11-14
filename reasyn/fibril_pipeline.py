@@ -308,3 +308,12 @@ def _run_analysis(root, config_path):
     return output
 
 
+def predict_saved_model(record, feature_rows):
+    from scipy.special import expit
+    matrix = np.array([[row[name] for name in record["features"]] for row in feature_rows], dtype=float)
+    if not np.isfinite(matrix).all():
+        raise ValueError("prediction features must be finite")
+    scaled = (matrix - np.array(record["scaler_mean"])) / np.array(record["scaler_scale"])
+    return expit(scaled @ np.array(record["coefficients"]) + record["intercept"])
+
+

@@ -24,3 +24,10 @@ def test_rigid_transform_invariance_and_reflection():
     assert compare_backbones(left, right)["score"] == pytest.approx(1)
 
 
+def test_missing_residues_cannot_score_as_complete():
+    xyz = np.random.default_rng(4).normal(size=(60, 3))
+    left = {"xyz": xyz, "residues": np.arange(60)}
+    right = {"xyz": xyz[:30], "residues": np.arange(30)}
+    assert compare_backbones(left, right)["score"] == pytest.approx(0.5)
+
+

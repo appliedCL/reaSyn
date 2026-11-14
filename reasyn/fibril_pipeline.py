@@ -317,3 +317,9 @@ def predict_saved_model(record, feature_rows):
     return expit(scaled @ np.array(record["coefficients"]) + record["intercept"])
 
 
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--root", type=Path, default=Path.cwd())
+    parser.add_argument("--config", type=Path, default=Path("config/fibril_analysis.json"))
+    args = parser.parse_args()
+    print(run_analysis(args.root, args.config))

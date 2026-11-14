@@ -12,3 +12,4 @@
 !config/*.json
 !tests/
 !tests/*.py
+!notebooks/curate_fibril_metadata.ipynb

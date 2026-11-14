@@ -10,3 +10,4 @@
 !reasyn/*.py
 !config/
 !config/*.json
+!tests/

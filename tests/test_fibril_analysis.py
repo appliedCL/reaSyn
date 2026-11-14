@@ -91,3 +91,11 @@ def test_manifest_cannot_escape_project(tmp_path):
         project_path(tmp_path, "../outside")
 
 
+@pytest.fixture(scope="module")
+def real_run():
+    root = Path(__file__).resolve().parents[1]
+    if not (root / "data/fibril_manifest.json").exists():
+        pytest.skip("local frozen dataset is not installed")
+    return run_analysis(root, root / "config/fibril_analysis.json")
+
+

@@ -323,3 +323,7 @@ def main():
     parser.add_argument("--config", type=Path, default=Path("config/fibril_analysis.json"))
     args = parser.parse_args()
     print(run_analysis(args.root, args.config))
+
+
+if __name__ == "__main__":
+    main()

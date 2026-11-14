@@ -43,3 +43,8 @@ def test_causal_adjustment_recovers_planted_confounding():
     assert set(np.round(propensity, 1)) == {0.1, 0.9}
 
 
+def test_no_overlap_is_rejected():
+    with pytest.raises(ValueError, match="overlap"):
+        stratified_causal_weights([0, 0, 1, 1], [0, 0, 1, 1])
+
+

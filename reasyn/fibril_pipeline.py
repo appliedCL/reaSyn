@@ -20,3 +20,29 @@ from .fibril_sampling import hierarchical_draw, effective_sample_size
 from .fibril_sources import canonical_bytes, enrich_provenance, read_csv, sha256_file, validate_sources, write_csv, write_json
 
 
+def dependency_groups(rows, similarities, threshold, dependencies=()):
+    parent = {row["pdb_id"]: row["pdb_id"] for row in rows}
+
+    def find(item):
+        while parent[item] != item:
+            parent[item] = parent[parent[item]]
+            item = parent[item]
+        return item
+
+    def join(left, right):
+        if left in parent and right in parent:
+            a, b = sorted((find(left), find(right)))
+            parent[b] = a
+
+    studies = {}
+    for row in rows:
+        previous = studies.setdefault(row["study_id"], row["pdb_id"])
+        join(previous, row["pdb_id"])
+    for pair in similarities:
+        if pair["score"] >= threshold:
+            join(pair["left_id"], pair["right_id"])
+    for left, right in dependencies:
+        join(left, right)
+    return {identifier: find(identifier) for identifier in parent}
+
+

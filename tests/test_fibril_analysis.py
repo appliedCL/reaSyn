@@ -113,3 +113,11 @@ def test_real_split_leakage_and_sampling(real_run):
         assert 0 < float(row["conditional_probability"]) <= 1
 
 
+def test_saved_models_reproduce_actual_predictions(real_run):
+    features = {r["pdb_id"]: {k: float(v) for k, v in r.items() if k != "pdb_id"}
+                for r in read_csv(real_run / "geometric_features.csv")}
+    predictions = read_csv(real_run / "test_predictions.csv")
+    for model in json.loads((real_run / "models.json").read_text()):
+        rows = [r for r in predictions if r["arm"] == model["arm"] and int(r["seed"]) == model["seed"]]
+        actual = predict_saved_model(model, [features[r["pdb_id"]] for r in rows])
+        assert np.allclose(actual, [float(r["probability"]) for r in rows], atol=1e-14)

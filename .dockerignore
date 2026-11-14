@@ -13,3 +13,4 @@
 !tests/
 !tests/*.py
 !notebooks/curate_fibril_metadata.ipynb
+!notebooks/review_fibril_entries.ipynb

@@ -56,3 +56,18 @@ def metric_values(labels, probabilities, weights=None):
     return values
 
 
+def bootstrap_intervals(labels, probabilities, groups, seed, repetitions):
+    rng = np.random.default_rng(seed)
+    unique = np.unique(groups)
+    values = []
+    for _ in range(repetitions):
+        sampled = rng.choice(unique, len(unique), replace=True)
+        indices = np.concatenate([np.flatnonzero(groups == group) for group in sampled])
+        if len(np.unique(labels[indices])) == 2:
+            values.append(metric_values(labels[indices], probabilities[indices]))
+    return {"valid_replicates": len(values), "independent_groups": len(unique),
+            "intervals": {metric: np.quantile([value[metric] for value in values], [0.025, 0.975]).tolist()
+                          if len(unique) >= 3 and len(values) >= 30 else None
+                          for metric in ("average_precision", "roc_auc", "brier")}}
+
+

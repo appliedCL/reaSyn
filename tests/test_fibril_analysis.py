@@ -86,3 +86,8 @@ def test_clinical_seed_does_not_make_recombinant_material_patient_derived():
     assert classify_origin("human")[0] == "unknown"
 
 
+def test_manifest_cannot_escape_project(tmp_path):
+    with pytest.raises(ValueError, match="escapes"):
+        project_path(tmp_path, "../outside")
+
+

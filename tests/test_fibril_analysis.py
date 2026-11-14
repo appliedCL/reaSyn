@@ -79,3 +79,10 @@ def test_transitive_dependencies_cannot_cross_splits():
     assert len(set(groups.values())) == 1
 
 
+def test_clinical_seed_does_not_make_recombinant_material_patient_derived():
+    assert classify_origin("human recombinant seeded from patient brain")[0] == "in_vitro"
+    assert classify_origin("human extracted from M83 mouse brain")[0] == "model_organism"
+    assert classify_origin("human extracted from patient brain")[0] == "human_tissue"
+    assert classify_origin("human")[0] == "unknown"
+
+

@@ -48,3 +48,8 @@ def test_no_overlap_is_rejected():
         stratified_causal_weights([0, 0, 1, 1], [0, 0, 1, 1])
 
 
+def test_constant_weights_when_exposure_is_balanced():
+    weights, _ = stratified_causal_weights([0, 0, 1, 1] * 2, [0] * 4 + [1] * 4)
+    assert np.all(weights == 1)
+
+

@@ -72,3 +72,10 @@ def test_impossible_cap_and_zero_mass_rejected():
         hierarchical_draw(["a", "b"], {"a": 1, "b": 0}, 4, 1, 2)
 
 
+def test_transitive_dependencies_cannot_cross_splits():
+    rows = [{"pdb_id": "a", "study_id": "one"}, {"pdb_id": "b", "study_id": "one"},
+            {"pdb_id": "c", "study_id": "two"}, {"pdb_id": "d", "study_id": "three"}]
+    groups = dependency_groups(rows, [{"left_id": "b", "right_id": "c", "score": 0.99}], 0.95, [("c", "d")])
+    assert len(set(groups.values())) == 1
+
+

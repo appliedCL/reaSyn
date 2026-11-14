@@ -9,3 +9,4 @@
 !reasyn/
 !reasyn/*.py
 !config/
+!config/*.json

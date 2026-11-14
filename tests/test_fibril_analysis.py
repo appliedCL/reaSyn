@@ -65,3 +65,10 @@ def test_capped_sampling_determinism_and_probabilities(seed):
     assert all(d["initial_probability"] == (0.5 if d["index"] == 2 else 0.25) for d in draws)
 
 
+def test_impossible_cap_and_zero_mass_rejected():
+    with pytest.raises(ValueError):
+        hierarchical_draw(["a"], {"a": 1}, 3, 1, 2)
+    with pytest.raises(ValueError):
+        hierarchical_draw(["a", "b"], {"a": 1, "b": 0}, 4, 1, 2)
+
+

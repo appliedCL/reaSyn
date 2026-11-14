@@ -46,3 +46,13 @@ def dependency_groups(rows, similarities, threshold, dependencies=()):
     return {identifier: find(identifier) for identifier in parent}
 
 
+def metric_values(labels, probabilities, weights=None):
+    values = {"brier": float(brier_score_loss(labels, probabilities, sample_weight=weights))}
+    if len(np.unique(labels)) == 2:
+        values.update(average_precision=float(average_precision_score(labels, probabilities, sample_weight=weights)),
+                      roc_auc=float(roc_auc_score(labels, probabilities, sample_weight=weights)))
+    else:
+        values.update(average_precision=None, roc_auc=None)
+    return values
+
+

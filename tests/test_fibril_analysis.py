@@ -99,3 +99,17 @@ def real_run():
     return run_analysis(root, root / "config/fibril_analysis.json")
 
 
+def test_real_split_leakage_and_sampling(real_run):
+    splits = {r["pdb_id"]: r for r in read_csv(real_run / "frozen_splits.csv")}
+    for group in {r["dependency_group"] for r in splits.values()}:
+        assert len({r["split"] for r in splits.values() if r["dependency_group"] == group}) == 1
+    for row in read_csv(real_run / "similarity_matrix.csv"):
+        if float(row["score"]) >= 0.95:
+            assert splits[row["left_id"]]["split"] == splits[row["right_id"]]["split"]
+    for row in read_csv(real_run / "resampled_training_rows.csv"):
+        assert splits[row["pdb_id"]]["split"] == "train"
+        assert 1 <= int(row["draw_count"]) <= 5
+        assert len(row["coordinate_sha256"]) == 64
+        assert 0 < float(row["conditional_probability"]) <= 1
+
+

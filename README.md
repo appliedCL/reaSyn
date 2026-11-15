@@ -28,3 +28,9 @@ docker run --rm --network none -v "$PWD/data:/workspace/data" -v "$PWD/data/raw:
 docker run --rm --network none reasyn-analysis python -m pytest -q
 ```
 
+## Inputs
+
+The acquisition and inclusion-review notebooks remain the source workflow. `make download-fibril-structures` downloads coordinates and structured metadata. Review decisions, publication source files and the matching curation export are also required before analysis. The runner fails on missing, altered or stale inputs; it does not manufacture curation on a fresh checkout. All data are intentionally ignored by Git. Preserve your local `data/` directory or a separate archive when moving machines.
+
+Publication metadata retain their original review status. Rerun `curate_fibril_metadata.ipynb` after intentional curation edits. Original sources and earlier exports remain intact. New downloads should enter a separate snapshot and must not alter a frozen test set.
+

@@ -6,3 +6,4 @@ COPY reasyn/ reasyn/
 COPY config/ config/
 COPY tests/ tests/
 COPY notebooks/ notebooks/
+ENV PYTEST_DISABLE_PLUGIN_AUTOLOAD=1

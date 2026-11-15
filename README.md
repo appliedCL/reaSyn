@@ -20,3 +20,11 @@ Open `notebooks/analyse_fibril_structures.ipynb` for the results. Shared numeric
 
 Configuration is in `config/fibril_analysis.json`. Results are written to `data/analysis/<run-id>/report.md` with metadata, similarities, frozen splits, model coefficients, predictions, resampling rows and diagnostics. Completed runs verify output checksums before reuse. The primary threshold and temporal boundary are exploratory defaults recorded before fitting. Do not tune them against reported test results and continue to call that test independent.
 
+## Container
+
+```sh
+docker build -f Dockerfile.analysis -t reasyn-analysis .
+docker run --rm --network none -v "$PWD/data:/workspace/data" -v "$PWD/data/raw:/workspace/data/raw:ro" reasyn-analysis
+docker run --rm --network none reasyn-analysis python -m pytest -q
+```
+

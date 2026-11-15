@@ -1,9 +1,12 @@
-.PHONY: check-fibril-environment download-fibril-structures test
+.PHONY: check-fibril-environment download-fibril-structures test analyse
 
 PYTHON ?= .venv/bin/python
 
 test:
 	PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 $(PYTHON) -m pytest -q
+
+analyse:
+	$(PYTHON) -m reasyn.fibril_pipeline
 
 check-fibril-environment:
 	docker build --tag reasyn-fibril-environment .

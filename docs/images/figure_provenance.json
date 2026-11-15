@@ -1,0 +1,71 @@
+{
+  "analysis_run": "09ade05f26ca8b92",
+  "causal_run": "87500771ea55cbd4",
+  "figures": {
+    "fibril_benchmark.png": {
+      "cutoff": 0.5,
+      "mean_average_precision": {
+        "class_balanced": 0.7164724068983883,
+        "ordinary_resampling": 0.6759124258973842,
+        "original": 0.6943046084350433,
+        "random_weight_control": 0.6990641362334844,
+        "study_resampled": 0.6246374160315682,
+        "study_weighted": 0.6372917173668008
+      },
+      "seed_counts": {
+        "class_balanced": 1,
+        "ordinary_resampling": 20,
+        "original": 1,
+        "random_weight_control": 20,
+        "study_resampled": 20,
+        "study_weighted": 1
+      },
+      "sha256": "fc4b652963c3678f73e10f1bd5fa17e6630a4d1ddc507ff52466ca51975ab129",
+      "split_counts": {
+        "reference": 7,
+        "test": 40,
+        "train": 123
+      }
+    },
+    "ph_batch_overlap.png": {
+      "batches": [
+        {
+          "batch_id": "frey_2026_batch_9",
+          "ph_7_0_samples": "1",
+          "ph_7_4_samples": "0"
+        },
+        {
+          "batch_id": "frey_2026_batch_12",
+          "ph_7_0_samples": "0",
+          "ph_7_4_samples": "1"
+        },
+        {
+          "batch_id": "frey_2026_batch_13",
+          "ph_7_0_samples": "4",
+          "ph_7_4_samples": "0"
+        },
+        {
+          "batch_id": "frey_2026_batch_15",
+          "ph_7_0_samples": "2",
+          "ph_7_4_samples": "0"
+        },
+        {
+          "batch_id": "frey_2026_batch_16",
+          "ph_7_0_samples": "0",
+          "ph_7_4_samples": "3"
+        }
+      ],
+      "preparations": 11,
+      "sha256": "ee22b970112c47a7475ccb7b643b73668622ba63d9e9149d89110ec29bf0bc95",
+      "supported_batches": 0
+    }
+  },
+  "inputs": {
+    "data/analysis/09ade05f26ca8b92/evaluation_metrics.json": "3b8cdc8d03b99547f5a1cdb3f1c8507db05194f0b19ad48103fa8f2b663b2b00",
+    "data/analysis/09ade05f26ca8b92/protocol.json": "09ade05f26ca8b92e9bd6b31cb30914c3f2a626183b4fe7b8590f386abef31de",
+    "data/analysis/09ade05f26ca8b92/summary.json": "fa64fc540d3ed7f0e874595b8f6348c47559a20842fe95836ca199dbfca5614c",
+    "data/causal/87500771ea55cbd4/batch_overlap.csv": "c299ec843f004b24d179a55a4249afc1e222f9a328c86c5358432251cef3cfd4",
+    "data/causal/87500771ea55cbd4/causal_diagnosis.json": "cab4514ad98891d8a2e7597bd2abefbee674194b1cf10e349aa8b99b4d75185d"
+  },
+  "matplotlib_version": "3.10.8"
+}

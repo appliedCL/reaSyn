@@ -4,6 +4,18 @@ Resampling alpha-synuclein structural ensembles from the [Amyloid Atlas](https:/
 
 The workflow validates frozen inputs, measures backbone similarity, freezes dependency-aware temporal splits, runs six descriptive model baselines, exports capped resampling draws and reports uncertainty. The causal estimator is tested on synthetic confounding. Real-data causal correction remains unavailable because a defensible causal design and sufficient independent-sample metadata have not been established.
 
+## Results at a glance
+
+![Dataset allocation and six baseline average-precision scores: 123 training structures, 40 evaluation structures and 7 structures reserved with the references.](docs/images/fibril_benchmark.png)
+
+Results at the prespecified 0.5 similarity cutoff. Diamonds show mean average precision; faint dots show individual random seeds for stochastic arms. Equal-study resampling scored 0.625 versus 0.694 for original data. These are exploratory results from the same Atlas snapshot, not evidence of improved causal generalisation. Seed variation is not a confidence interval.
+
+![Preparation counts at pH 7.0 and 7.4 across five batches: no batch contains both pH groups.](docs/images/ph_batch_overlap.png)
+
+The coordinate-linked subset from [Frey et al. (2026)](https://doi.org/10.7554/eLife.112692.1) contains 11 preparations for this contrast. No within-batch pH comparison is available, preventing the proposed batch-adjusted correction.
+
+Figures are generated from saved results by [plot_fibril_readme.ipynb](notebooks/plot_fibril_readme.ipynb), using Matplotlib 3.10.8 (`.venv/bin/python -m pip install matplotlib==3.10.8`). Run its cells in order with the local data present to regenerate the images. [Figure provenance](docs/images/figure_provenance.json) records input checksums, run IDs and plotted values.
+
 ## Run
 
 Use Python 3.14 and the existing downloaded data:

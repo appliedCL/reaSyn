@@ -7,3 +7,4 @@ COPY config/ config/
 COPY tests/ tests/
 COPY notebooks/ notebooks/
 ENV PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+CMD ["python", "-m", "reasyn.fibril_pipeline"]

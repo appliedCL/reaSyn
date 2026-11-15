@@ -1,4 +1,4 @@
-.PHONY: check-fibril-environment download-fibril-structures test analyse notebook
+.PHONY: check-fibril-environment download-fibril-structures test analyse notebook causal-overlap
 
 PYTHON ?= .venv/bin/python
 
@@ -10,6 +10,9 @@ analyse:
 
 notebook:
 	$(PYTHON) -m jupyter execute notebooks/analyse_fibril_structures.ipynb --timeout=1800 --inplace
+
+causal-overlap:
+	docker run --rm --network none --mount 'type=bind,src=$(CURDIR)/data,dst=/workspace/data' --mount 'type=bind,src=$(CURDIR)/data/raw,dst=/workspace/data/raw,readonly' --mount 'type=bind,src=$(CURDIR)/notebooks,dst=/workspace/notebooks' reasyn-analysis jupyter execute notebooks/assess_fibril_causal_overlap.ipynb --timeout=120 --inplace
 
 check-fibril-environment:
 	docker build --tag reasyn-fibril-environment .

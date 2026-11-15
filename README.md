@@ -34,3 +34,10 @@ The acquisition and inclusion-review notebooks remain the source workflow. `make
 
 Publication metadata retain their original review status. Rerun `curate_fibril_metadata.ipynb` after intentional curation edits. Original sources and earlier exports remain intact. New downloads should enter a separate snapshot and must not alter a frozen test set.
 
+## Interpretation
+
+The real-data causal assessment is in `notebooks/assess_fibril_causal_overlap.ipynb`; run it with `make causal-overlap` using the existing analysis container and cached publication tables. It links 22 conformations to 13 preparations from Frey et al. (2026), reconciles an accession discrepancy through EMDB identifiers and leaves one unresolved mapping excluded. For the pH 7.0 versus 7.4 contrast, 11 preparations span five batches but every batch has only one exposure level. The proposed batch-adjusted causal effect is therefore not identifiable from this coordinate-linked subset. The notebook computes this diagnosis from sample-level records and exports the evidence under `data/causal/`. It does not replace the frozen prediction benchmark or claim that all possible causal questions have been ruled out.
+
+The current target is resemblance to selected patient-derived backbones, not disease prediction. It omits protofilament interfaces. The temporal evaluation cohort comes from the same Atlas snapshot; independent external validation is outstanding. Equal-study weighting and resampling are descriptive baselines and must not be described as causal correction.
+
+See [the protocol](docs/fibril_method.md) for assumptions, the proposed causal graph, sampling probabilities and limitations. Original researchers receive credit for coordinates and experimental evidence; reaSyn contributes processing, resampling and evaluation. This workflow performs no publication or coordinate generation.

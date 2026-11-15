@@ -1,5 +1,7 @@
 .PHONY: check-fibril-environment download-fibril-structures
 
+PYTHON ?= .venv/bin/python
+
 check-fibril-environment:
 	docker build --tag reasyn-fibril-environment .
 	mkdir -p results

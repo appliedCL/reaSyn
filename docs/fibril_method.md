@@ -35,3 +35,8 @@ graph LR
 
 Observing only S=1 does not identify deposition probabilities. Resolution may depend on structure and measurement, and a similarity-derived label is a consequence of X; neither is automatically a confounder. No causal A, C or target distribution has been established for this dataset. The real-data causal arms therefore remain unavailable. The reusable categorical estimator implements P(A)/P(A|C) at an independently justified sample level, rejects insufficient overlap and is tested on a planted-confounding example. Passing that test does not validate this graph for fibrils.
 
+## Sampling and release
+
+Sampling first selects a study, then a conformation within it. No population weights are available, so within-study selection is uniform. A copy cap changes conditional probabilities as items become unavailable: both initial and per-draw conditional probabilities are recorded. These are not claimed to be marginal inclusion probabilities under capped sampling. Study weights are renormalised across studies with remaining capacity. Coordinates are never generated.
+
+Outputs live under `data/analysis/<content-hash>/`. A protocol is written before fitting and includes code, input and environment hashes. Completed runs validate every output checksum before reuse. No raw files are overwritten. Publication, domain review and an external evaluation dataset remain outstanding scientific steps; software execution cannot supply them.

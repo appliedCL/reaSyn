@@ -1,4 +1,4 @@
-.PHONY: check-fibril-environment download-fibril-structures test analyse
+.PHONY: check-fibril-environment download-fibril-structures test analyse notebook
 
 PYTHON ?= .venv/bin/python
 
@@ -7,6 +7,9 @@ test:
 
 analyse:
 	$(PYTHON) -m reasyn.fibril_pipeline
+
+notebook:
+	$(PYTHON) -m jupyter execute notebooks/analyse_fibril_structures.ipynb --timeout=1800 --inplace
 
 check-fibril-environment:
 	docker build --tag reasyn-fibril-environment .

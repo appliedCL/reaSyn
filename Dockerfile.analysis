@@ -5,3 +5,4 @@ RUN python -m pip install --no-cache-dir -r requirements-analysis.txt && python 
 COPY reasyn/ reasyn/
 COPY config/ config/
 COPY tests/ tests/
+COPY notebooks/ notebooks/

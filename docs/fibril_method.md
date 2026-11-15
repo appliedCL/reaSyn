@@ -20,3 +20,18 @@ This cohort is a holdout from the same Atlas snapshot. It is not a verified inde
 
 Features are mean chain geometry: ordered length, radius of gyration, span, end-to-end distance, nonlocal contact density, principal-axis fraction and planarity. Reference scores and origin metadata are excluded from predictors. Scaling is fitted on original training data only. All arms use the same logistic model, C=1, and optimisation budget. There is no hyperparameter search. Baselines are original data, class balancing, ordinary capped resampling, equal-study weighted loss, equal-study capped resampling and random study weights. The latter three are descriptive controls, not causal adjustments. Draw variation and dependency-group bootstrap intervals are recorded separately. Small numbers of evaluation groups suppress confidence intervals.
 
+## Causal eligibility
+
+X denotes structural observations. A must be an agreed pre-structure condition; C must contain measured causes of both A and X. A possible back-door hypothesis is:
+
+```mermaid
+graph LR
+    C --> A
+    C --> X
+    A --> X
+    C --> S[deposition selection]
+    X --> S
+```
+
+Observing only S=1 does not identify deposition probabilities. Resolution may depend on structure and measurement, and a similarity-derived label is a consequence of X; neither is automatically a confounder. No causal A, C or target distribution has been established for this dataset. The real-data causal arms therefore remain unavailable. The reusable categorical estimator implements P(A)/P(A|C) at an independently justified sample level, rejects insufficient overlap and is tested on a planted-confounding example. Passing that test does not validate this graph for fibrils.
+

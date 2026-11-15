@@ -3,3 +3,4 @@ WORKDIR /workspace
 COPY requirements.txt requirements-analysis.txt ./
 RUN python -m pip install --no-cache-dir -r requirements-analysis.txt && python -m pip check
 COPY reasyn/ reasyn/
+COPY config/ config/

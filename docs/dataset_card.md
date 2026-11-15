@@ -1,3 +1,5 @@
 # Dataset and model card
 
 reaSyn's local release contains references to existing human alpha-synuclein cryo-EM fibril coordinates, descriptive metadata and resampling draws. It is intended for reproducible structural-method development. It is unsuitable for clinical prediction, disease-mechanism inference or claims that absent fibril polymorphs have been recovered.
+
+The acquisition snapshot has 225 entries. The existing inclusion review admits 170, leaves 53 pending and excludes two mouse-protein entries. Human protein expressed in animal models is separately annotated; it is not human patient material. Paper-derived metadata currently cover 13 entries across two studies and await human spot-check. Other fields retain unknown values or explicitly identified Atlas-derived provenance. Missing sample identifiers must not be treated as independent samples.
